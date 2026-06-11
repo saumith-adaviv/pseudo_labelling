@@ -51,7 +51,7 @@ def run_k_sweep(
         )
 
         # Predict on query set
-        predicted = knn_multilabel_predict(
+        predicted, _ = knn_multilabel_predict(
             query_embeddings, golden_embeddings, golden_label_matrix,
             k=k, thresholds=thresholds
         )
