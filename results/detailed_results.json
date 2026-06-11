@@ -1,0 +1,232 @@
+{
+  "bioclip2": {
+    "overall_accuracy": 54.19,
+    "avg_confidence": 0.9392,
+    "per_class": {
+      "0": {
+        "accuracy": 64.66,
+        "avg_confidence": 0.9618,
+        "n_query": 133
+      },
+      "01_Hongo podrido": {
+        "accuracy": 48.82,
+        "avg_confidence": 0.9446,
+        "n_query": 424
+      },
+      "02_Magullado": {
+        "accuracy": 67.46,
+        "avg_confidence": 0.9454,
+        "n_query": 2219
+      },
+      "03_Sobre maduro": {
+        "accuracy": 78.57,
+        "avg_confidence": 0.9625,
+        "n_query": 28
+      },
+      "04_Inmadura albina": {
+        "accuracy": 54.86,
+        "avg_confidence": 0.9162,
+        "n_query": 988
+      },
+      "05_Cenicilla bronceada": {
+        "accuracy": 60.0,
+        "avg_confidence": 0.956,
+        "n_query": 15
+      },
+      "06_Presencia y dan\u0303o de insecto": {
+        "accuracy": 88.24,
+        "avg_confidence": 0.9537,
+        "n_query": 17
+      },
+      "07_Deforme": {
+        "accuracy": 23.55,
+        "avg_confidence": 0.9416,
+        "n_query": 998
+      }
+    }
+  },
+  "dinov2": {
+    "overall_accuracy": 64.16,
+    "avg_confidence": 0.8912,
+    "per_class": {
+      "0": {
+        "accuracy": 79.7,
+        "avg_confidence": 0.9502,
+        "n_query": 133
+      },
+      "01_Hongo podrido": {
+        "accuracy": 65.33,
+        "avg_confidence": 0.9126,
+        "n_query": 424
+      },
+      "02_Magullado": {
+        "accuracy": 83.96,
+        "avg_confidence": 0.9123,
+        "n_query": 2219
+      },
+      "03_Sobre maduro": {
+        "accuracy": 96.43,
+        "avg_confidence": 0.9568,
+        "n_query": 28
+      },
+      "04_Inmadura albina": {
+        "accuracy": 60.73,
+        "avg_confidence": 0.8243,
+        "n_query": 988
+      },
+      "05_Cenicilla bronceada": {
+        "accuracy": 60.0,
+        "avg_confidence": 0.9326,
+        "n_query": 15
+      },
+      "06_Presencia y dan\u0303o de insecto": {
+        "accuracy": 82.35,
+        "avg_confidence": 0.9362,
+        "n_query": 17
+      },
+      "07_Deforme": {
+        "accuracy": 19.84,
+        "avg_confidence": 0.8902,
+        "n_query": 998
+      }
+    }
+  },
+  "siglip2": {
+    "overall_accuracy": 65.04,
+    "avg_confidence": 0.9575,
+    "per_class": {
+      "0": {
+        "accuracy": 73.68,
+        "avg_confidence": 0.9782,
+        "n_query": 133
+      },
+      "01_Hongo podrido": {
+        "accuracy": 73.11,
+        "avg_confidence": 0.9556,
+        "n_query": 424
+      },
+      "02_Magullado": {
+        "accuracy": 87.2,
+        "avg_confidence": 0.9661,
+        "n_query": 2219
+      },
+      "03_Sobre maduro": {
+        "accuracy": 92.86,
+        "avg_confidence": 0.9802,
+        "n_query": 28
+      },
+      "04_Inmadura albina": {
+        "accuracy": 51.72,
+        "avg_confidence": 0.9371,
+        "n_query": 988
+      },
+      "05_Cenicilla bronceada": {
+        "accuracy": 40.0,
+        "avg_confidence": 0.9723,
+        "n_query": 15
+      },
+      "06_Presencia y dan\u0303o de insecto": {
+        "accuracy": 82.35,
+        "avg_confidence": 0.975,
+        "n_query": 17
+      },
+      "07_Deforme": {
+        "accuracy": 23.65,
+        "avg_confidence": 0.9555,
+        "n_query": 998
+      }
+    }
+  },
+  "inat_eva02": {
+    "overall_accuracy": 64.87,
+    "avg_confidence": 0.8668,
+    "per_class": {
+      "0": {
+        "accuracy": 67.67,
+        "avg_confidence": 0.9312,
+        "n_query": 133
+      },
+      "01_Hongo podrido": {
+        "accuracy": 67.92,
+        "avg_confidence": 0.9013,
+        "n_query": 424
+      },
+      "02_Magullado": {
+        "accuracy": 85.76,
+        "avg_confidence": 0.8789,
+        "n_query": 2219
+      },
+      "03_Sobre maduro": {
+        "accuracy": 100.0,
+        "avg_confidence": 0.9463,
+        "n_query": 28
+      },
+      "04_Inmadura albina": {
+        "accuracy": 63.77,
+        "avg_confidence": 0.8003,
+        "n_query": 988
+      },
+      "05_Cenicilla bronceada": {
+        "accuracy": 66.67,
+        "avg_confidence": 0.9297,
+        "n_query": 15
+      },
+      "06_Presencia y dan\u0303o de insecto": {
+        "accuracy": 88.24,
+        "avg_confidence": 0.9356,
+        "n_query": 17
+      },
+      "07_Deforme": {
+        "accuracy": 16.43,
+        "avg_confidence": 0.8781,
+        "n_query": 998
+      }
+    }
+  },
+  "plantclef": {
+    "overall_accuracy": 64.52,
+    "avg_confidence": 0.7415,
+    "per_class": {
+      "0": {
+        "accuracy": 63.91,
+        "avg_confidence": 0.853,
+        "n_query": 133
+      },
+      "01_Hongo podrido": {
+        "accuracy": 61.79,
+        "avg_confidence": 0.7825,
+        "n_query": 424
+      },
+      "02_Magullado": {
+        "accuracy": 84.99,
+        "avg_confidence": 0.741,
+        "n_query": 2219
+      },
+      "03_Sobre maduro": {
+        "accuracy": 85.71,
+        "avg_confidence": 0.8552,
+        "n_query": 28
+      },
+      "04_Inmadura albina": {
+        "accuracy": 68.72,
+        "avg_confidence": 0.6927,
+        "n_query": 988
+      },
+      "05_Cenicilla bronceada": {
+        "accuracy": 46.67,
+        "avg_confidence": 0.8196,
+        "n_query": 15
+      },
+      "06_Presencia y dan\u0303o de insecto": {
+        "accuracy": 88.24,
+        "avg_confidence": 0.8584,
+        "n_query": 17
+      },
+      "07_Deforme": {
+        "accuracy": 15.33,
+        "avg_confidence": 0.7521,
+        "n_query": 998
+      }
+    }
+  }
+}

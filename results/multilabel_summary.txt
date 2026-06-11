@@ -1,0 +1,39 @@
+============================================================
+MULTI-LABEL AUDIT SUMMARY
+============================================================
+Total unique images : 4381
+Single-label images : 3815
+Multi-label images  : 566
+Zero-label images   : 0
+
+Label distribution:
+  1 label(s): 3815 images
+  2 label(s): 553 images
+  3 label(s): 13 images
+
+Per-class count:
+  0: 163 images
+  01_Hongo podrido: 454 images
+  02_Magullado: 2249 images
+  03_Sobre maduro: 54 images
+  04_Inmadura albina: 987 images
+  05_Cenicilla bronceada: 30 images
+  06_Presencia y daño de insecto: 33 images
+  07_Deforme: 990 images
+
+Most common label combinations (top 15):
+  [02_Magullado]: 2161 images
+  [04_Inmadura albina]: 571 images
+  [07_Deforme]: 519 images
+  [01_Hongo podrido]: 349 images
+  [04_Inmadura albina, 07_Deforme]: 308 images
+  [0]: 149 images
+  [01_Hongo podrido, 04_Inmadura albina]: 82 images
+  [02_Magullado, 07_Deforme]: 74 images
+  [03_Sobre maduro]: 38 images
+  [06_Presencia y daño de insecto, 07_Deforme]: 22 images
+  [05_Cenicilla bronceada]: 17 images
+  [03_Sobre maduro, 07_Deforme]: 16 images
+  [01_Hongo podrido, 07_Deforme]: 15 images
+  [0, 07_Deforme]: 14 images
+  [02_Magullado, 04_Inmadura albina]: 12 images

@@ -1,0 +1,6 @@
+model,overall_accuracy,avg_confidence
+bioclip2,54.19,0.9392
+dinov2,64.16,0.8912
+siglip2,65.04,0.9575
+inat_eva02,64.87,0.8668
+plantclef,64.52,0.7415

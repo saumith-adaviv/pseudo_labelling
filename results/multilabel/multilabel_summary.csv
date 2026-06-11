@@ -1,0 +1,11 @@
+model,method,macro_f1,micro_f1,hamming_loss
+siglip2,knn,0.6219,0.7209,0.085
+siglip2,partial_aggregation,0.2483,0.3463,0.5181
+dinov2,knn,0.5435,0.6565,0.1143
+dinov2,partial_aggregation,0.2712,0.399,0.2999
+inat_eva02,knn,0.5303,0.6168,0.1351
+inat_eva02,partial_aggregation,0.3619,0.4486,0.2029
+plantclef,knn,0.4928,0.6176,0.1341
+plantclef,partial_aggregation,0.3591,0.412,0.1886
+bioclip2,knn,0.5503,0.6335,0.1301
+bioclip2,partial_aggregation,0.2267,0.2945,0.6416

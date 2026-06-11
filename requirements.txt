@@ -1,0 +1,12 @@
+torch
+torchvision
+transformers
+open-clip-torch
+timm
+umap-learn
+scikit-learn
+matplotlib
+pandas
+Pillow
+numpy
+tqdm
