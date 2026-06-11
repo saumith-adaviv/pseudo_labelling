@@ -48,7 +48,8 @@ RESULTS_DIR     = str(Path(__file__).parent / "results" / "multilabel")
 N_GOLDEN        = 30
 KNN_K           = 10
 SEED            = 42
-DEVICE          = "mps"
+import torch
+DEVICE          = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
 
 MODELS_TO_RUN = [
     "siglip2",

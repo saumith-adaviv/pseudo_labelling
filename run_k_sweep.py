@@ -8,6 +8,7 @@ import argparse
 import json
 import os
 import numpy as np
+import torch
 
 from data.image_loader import load_dataset
 from data.audit_multilabel import build_label_matrix
@@ -46,6 +47,9 @@ def main(data_path: str):
 
     all_results = {}
 
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"[k_sweep] Using device: {device}")
+
     for model_key in MODELS_TO_RUN:
         if model_key not in MODEL_REGISTRY:
             print(f"[k_sweep] Skipping unknown model: {model_key}")
@@ -55,7 +59,7 @@ def main(data_path: str):
         print(f"  Model: {model_key}")
         print(f"{'#'*55}")
 
-        model = MODEL_REGISTRY[model_key]()
+        model = MODEL_REGISTRY[model_key](device=device)
         model.load_model()
 
         golden_emb = extract_embeddings(model, golden["images"])

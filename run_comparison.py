@@ -26,7 +26,8 @@ N_GOLDEN     = 30        # images per class for golden set
 N_CLUSTERS   = 8         # known defect classes — flexible, change as needed
 SEED         = 42
 RESULTS_DIR  = str(Path(__file__).parent / "results")
-DEVICE       = "mps"     # change to "cuda" if GPU available
+import torch
+DEVICE       = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
 
 MODELS_TO_RUN = [
     "bioclip2",
