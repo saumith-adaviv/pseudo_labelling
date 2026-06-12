@@ -14,10 +14,11 @@ from data.image_loader import load_dataset
 from data.audit_multilabel import build_label_matrix
 from embeddings.extractor import extract_embeddings
 from evaluation.k_sweep import run_k_sweep
+from evaluation.adaptive_cluster_knn import run_adaptive_cluster_knn
 from models import MODEL_REGISTRY
 
 # ── Config ────────────────────────────────────────────────────────────────────
-MODELS_TO_RUN = ["siglip2", "dinov2", "bioclip2", "inat_eva02", "evaclip"]
+MODELS_TO_RUN = ["siglip2"]
 K_VALUES      = [5, 10, 15, 20, 30]
 OUTPUT_FILE   = "results/k_sweep_results.json"
 # ─────────────────────────────────────────────────────────────────────────────
@@ -65,13 +66,25 @@ def main(data_path: str):
         golden_emb = extract_embeddings(model, golden["images"])
         query_emb  = extract_embeddings(model, query["images"])
 
+        # Method 1 — K sweep (KNN)
         sweep = run_k_sweep(
             golden_emb, golden_lm,
             query_emb,  query_lm,
             class_names, k_values=K_VALUES
         )
 
-        all_results[model_key] = sweep
+        # Method 2 — Adaptive Cluster KNN (best k from sweep)
+        best_k = sweep["best_k"]
+        cluster_result = run_adaptive_cluster_knn(
+            golden_emb, golden_lm,
+            query_emb,  query_lm,
+            class_names, k=best_k,
+        )
+
+        all_results[model_key] = {
+            "k_sweep":       sweep,
+            "cluster_knn":   cluster_result,
+        }
 
     # Save results
     with open(OUTPUT_FILE, "w") as f:
@@ -79,14 +92,18 @@ def main(data_path: str):
     print(f"\n[k_sweep] Results saved to {OUTPUT_FILE}")
 
     # Final summary
-    print(f"\n{'='*55}")
-    print("  FINAL SUMMARY — Best k per model")
-    print(f"{'='*55}")
-    print(f"{'Model':<15} | {'Best k':>6} | {'Macro F1':>10}")
-    print(f"{'-'*15}-+-{'-'*6}-+-{'-'*10}")
-    for model_key, sweep in all_results.items():
-        print(f"{model_key:<15} | {sweep['best_k']:>6} | {sweep['best_macro_f1']:>10.4f}")
-    print(f"{'='*55}")
+    print(f"\n{'='*65}")
+    print("  FINAL SUMMARY")
+    print(f"{'='*65}")
+    print(f"{'Model':<15} | {'KNN Best k':>10} | {'KNN F1':>8} | {'Cluster-KNN F1':>14}")
+    print(f"{'-'*15}-+-{'-'*10}-+-{'-'*8}-+-{'-'*14}")
+    for model_key, res in all_results.items():
+        knn_f1     = res["k_sweep"]["best_macro_f1"]
+        knn_k      = res["k_sweep"]["best_k"]
+        cluster_f1 = res["cluster_knn"]["macro_f1"]
+        winner     = "← better" if cluster_f1 > knn_f1 else ""
+        print(f"{model_key:<15} | {knn_k:>10} | {knn_f1:>8.4f} | {cluster_f1:>14.4f}  {winner}")
+    print(f"{'='*65}")
 
 
 if __name__ == "__main__":
